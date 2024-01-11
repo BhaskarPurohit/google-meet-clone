@@ -11,4 +11,7 @@ const SocketHandler = (req, res) => {
       console.log("server is connected");
     });
   }
+  res.end()
 };
+
+export default SocketHandler
