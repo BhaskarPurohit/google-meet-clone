@@ -1,4 +1,4 @@
-"use client";
+
 
 import { io } from "socket.io-client";
 import {createContext, useContext, useEffect, useState} from "react"
@@ -15,9 +15,14 @@ export const SocketProvider = (props) =>{
     const {children} = props
     useEffect(()=>{
         const connection = io()
+        console.log('socket connection establishes '+ connection );
         setSocket(connection)
     },[])
 
+    socket?.on('connect_error', async(err)=>{
+        console.log('error establishing socket ', err);
+        await fetch('/api/socket')
+    })
     return (
         <SocketContext.Provider value={socket}>
             {children}

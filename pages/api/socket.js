@@ -1,5 +1,5 @@
 //server code
-import { Server } from "socket.io/dist";
+import { Server } from "socket.io";
 
 const SocketHandler = (req, res)=>{
   
