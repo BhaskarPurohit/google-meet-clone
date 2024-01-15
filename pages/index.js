@@ -1,5 +1,6 @@
 import { useSocket } from "@/context/socket"
 import { useEffect } from "react"
+import usePeer from "@/hooks/usePeer"
 
 
 export default function Home(){
